@@ -34,7 +34,7 @@ struct ContentView: View {
         let endpoint = URL(string: "https://api.github.com/graphql")!
         let query = """
             query {
-                repository(owner: "a-elnajjar", name: "Painless-icon-generation-for-iOS-apps") {
+                repository(owner: "github_username", name: "repo_name") {
                     name
                     description
                     stargazers {
@@ -44,7 +44,7 @@ struct ContentView: View {
             }
         """
 
-        let token = "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"
+        let token = "personalToken"
         
         sendGraphQLRequest(url: endpoint, query: query, token: token) { result in
             DispatchQueue.main.async {
