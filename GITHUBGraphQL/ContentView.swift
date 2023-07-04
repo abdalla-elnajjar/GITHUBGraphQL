@@ -7,8 +7,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var responseData: [String: Any]?
+
     @State private var error: Error?
+    @State private var gitHubResponse: GitHubResponse?
     
     var body: some View {
         VStack {
@@ -16,8 +17,8 @@ struct ContentView: View {
                 fetchData()
             }
             
-            if let responseData = responseData {
-                Text("Response: \(dictionaryToString(responseData))")
+            if let repository = gitHubResponse?.repository {
+                Text("Response: \(repository.name)")
                     .multilineTextAlignment(.center)
             }
             
@@ -34,7 +35,7 @@ struct ContentView: View {
         let endpoint = URL(string: "https://api.github.com/graphql")!
         let query = """
             query {
-                repository(owner: "github_username", name: "repo_name") {
+                repository(owner: "a-elnajjar", name: "spaceXAppSwiftUI_") {
                     name
                     description
                     stargazers {
@@ -43,25 +44,19 @@ struct ContentView: View {
                 }
             }
         """
-
-        let token = "personalToken"
+        
+        let token = "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"
         
         sendGraphQLRequest(url: endpoint, query: query, token: token) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    if let json = try? JSONSerialization.jsonObject(with: data, options: []),
-                       let dataDict = json as? [String: Any],
-                       let data = dataDict["data"] as? [String: Any] {
-                        self.responseData = data
-                    }
+                    self.gitHubResponse = data
                 case .failure(let error):
                     self.error = error
                 }
             }
         }
-        
-        
     }
     
     func dictionaryToString(_ dictionary: [String: Any]) -> String {

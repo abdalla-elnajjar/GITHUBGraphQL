@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA685ED92A54B0960018A3F9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA685ED82A54B0960018A3F9 /* Repository.swift */; };
 		AABEF8D82A531F4C001266CC /* GITHUBGraphQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABEF8D72A531F4C001266CC /* GITHUBGraphQLApp.swift */; };
 		AABEF8DA2A531F4C001266CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABEF8D92A531F4C001266CC /* ContentView.swift */; };
 		AABEF8DC2A531F4F001266CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABEF8DB2A531F4F001266CC /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA685ED82A54B0960018A3F9 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = ../../../../ABDALLAE/Documents/GITHUBGraphQL/GITHUBGraphQL/Repository.swift; sourceTree = "<group>"; };
 		AABEF8D42A531F4C001266CC /* GITHUBGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GITHUBGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABEF8D72A531F4C001266CC /* GITHUBGraphQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GITHUBGraphQLApp.swift; sourceTree = "<group>"; };
 		AABEF8D92A531F4C001266CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		AABEF8D62A531F4C001266CC /* GITHUBGraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				AA685ED82A54B0960018A3F9 /* Repository.swift */,
 				AABEF8D72A531F4C001266CC /* GITHUBGraphQLApp.swift */,
 				AABEF8D92A531F4C001266CC /* ContentView.swift */,
 				AABEF8E72A5325DA001266CC /* Network.swift */,
@@ -143,6 +146,7 @@
 				AABEF8DA2A531F4C001266CC /* ContentView.swift in Sources */,
 				AABEF8D82A531F4C001266CC /* GITHUBGraphQLApp.swift in Sources */,
 				AABEF8E82A5325DA001266CC /* Network.swift in Sources */,
+				AA685ED92A54B0960018A3F9 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
