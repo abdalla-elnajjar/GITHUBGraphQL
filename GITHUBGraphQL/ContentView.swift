@@ -18,7 +18,9 @@ struct ContentView: View {
             }
             
             if let repository = gitHubResponse?.data.repository {
-                Text("Response: \(repository.name)")
+                Text("Response: \(repository.name) ")
+                    .multilineTextAlignment(.center)
+                Text("stargazers: \(repository.stargazers.totalCount) ")
                     .multilineTextAlignment(.center)
             }
             
@@ -45,7 +47,7 @@ struct ContentView: View {
             }
         """
         
-        let token = "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"
+        let token = "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"
         
         sendGraphQLRequest(url: endpoint, query: query, token: token) { result in
             DispatchQueue.main.async {
