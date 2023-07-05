@@ -9,7 +9,7 @@ import SwiftUI
 struct ContentView: View {
 
     @State private var error: Error?
-    @State private var gitHubResponse: GitHubResponse?
+    @State private var gitHubResponse: Response?
     
     var body: some View {
         VStack {
@@ -17,7 +17,7 @@ struct ContentView: View {
                 fetchData()
             }
             
-            if let repository = gitHubResponse?.repository {
+            if let repository = gitHubResponse?.data.repository {
                 Text("Response: \(repository.name)")
                     .multilineTextAlignment(.center)
             }
@@ -45,7 +45,7 @@ struct ContentView: View {
             }
         """
         
-        let token = "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"
+        let token = "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"
         
         sendGraphQLRequest(url: endpoint, query: query, token: token) { result in
             DispatchQueue.main.async {

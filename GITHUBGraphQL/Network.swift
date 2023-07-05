@@ -19,7 +19,7 @@ struct GraphQLRequestBody: Codable {
     let query: String
 }
 
-func sendGraphQLRequest(url: URL, query: String, token: String, completion: @escaping (Result<GitHubResponse, Error>) -> Void) {
+func sendGraphQLRequest(url: URL, query: String, token: String, completion: @escaping (Result<Response, Error>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -59,7 +59,7 @@ func sendGraphQLRequest(url: URL, query: String, token: String, completion: @esc
         do {
             
             let decoder = JSONDecoder()
-            let repositories = try decoder.decode(GitHubResponse.self, from: responseData)
+            let repositories = try decoder.decode(Response.self, from: responseData)
             completion(.success(repositories))
         } catch {
             
